@@ -1,0 +1,1 @@
+POST /log HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nAccept-Encoding: identity\r\nContent-Length: 200\r\nContent-type: application/json\r\n\r\n{"frames": [{"raw": "01 5a 41 42 43 44 00 00 00 00 0a 58 01 1a 00 00 00 01 a6 9a 00 00 00 00 07 bb", "ts": "2016-04-11T00:31:36.132798", "fid": "1460327496.13"}], "ver": "0.1", "dev": "test-client01"}
