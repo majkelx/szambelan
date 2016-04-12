@@ -28,8 +28,11 @@ def get_logsvc_config():
 
 def start():
     print (HERE)
-    cherrypy.tree.mount(HelloWorld(), '/',    config=get_app_config())
-    cherrypy.tree.mount(LogService(), '/log', config=get_logsvc_config())
+    logsvc = LogService()
+    hello = HelloWorld()
+    hello.logs = logsvc.logs
+    cherrypy.tree.mount(hello, '/',    config=get_app_config())
+    cherrypy.tree.mount(logsvc, '/log', config=get_logsvc_config())
     cherrypy.engine.signals.subscribe()
     cherrypy.engine.start()
     cherrypy.engine.block()

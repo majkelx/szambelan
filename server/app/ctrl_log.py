@@ -3,6 +3,7 @@ import cherrypy
 class LogService(object):
     exposed = True
 
+    logs = []
 
     @cherrypy.tools.accept()
 #     def GET(self):
@@ -11,6 +12,8 @@ class LogService(object):
     @cherrypy.tools.json_in()
     def POST(self):
         log =  cherrypy.request.json
+        for frame in log['frames']:
+            self.logs.append(frame)
         print (log)
 
 #     def PUT(self, another_string):
