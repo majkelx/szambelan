@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 
 aparser = argparse.ArgumentParser()
-aparser.add_argument("URL", help="URL of szambelan server", default="127.0.0.1:8080", nargs='?')
+aparser.add_argument("URL", help="server:port of szambelan server", default="127.0.0.1:8080", nargs='?')
 aparser.add_argument("dev", help="device id", default="test-client01", nargs='?')
 args = aparser.parse_args()
 
