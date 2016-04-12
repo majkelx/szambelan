@@ -1,1 +1,11 @@
-Szambelan serwer
+# Szambelan serwer
+
+
+## Build docker:
+
+cd server
+docker build -t <youname>/szambelan .
+
+## Run docker:
+
+docker run --name szmbelan -Pdit   <youname>/szambelan

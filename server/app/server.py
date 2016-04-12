@@ -33,6 +33,7 @@ def start():
     hello.logs = logsvc.logs
     cherrypy.tree.mount(hello, '/',    config=get_app_config())
     cherrypy.tree.mount(logsvc, '/log', config=get_logsvc_config())
+    cherrypy.config.update({'server.socket_host': '0.0.0.0'})
     cherrypy.engine.signals.subscribe()
     cherrypy.engine.start()
     cherrypy.engine.block()
